@@ -44,9 +44,9 @@ class Scanner(object):
             print(f'[!]ERROR: HTTP Connection EROOR. {err}')
             return False
 
-        if self.valid_resp_get.status_code == 404 and self.invalid_resp_get.status_code == 400:
+        if self.valid_resp_get.status_code == 404 and self.invalid_resp_get.status_code != 404:
             return True
-        elif self.valid_resp_options.status_code == 404 and self.invalid_resp_options.status_code == 400:
+        elif self.valid_resp_options.status_code == 404 and self.invalid_resp_options.status_code != 404:
             return True
         else:
             return False
