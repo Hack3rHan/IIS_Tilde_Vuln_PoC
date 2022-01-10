@@ -12,6 +12,8 @@ import requests
 
 from urllib.parse import urlparse
 
+requests.packages.urllib3.disable_warnings()
+
 
 class Scanner(object):
 
